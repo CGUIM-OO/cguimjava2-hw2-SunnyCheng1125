@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
+ * @author TODO: Student ID:B0344108 Name:鄭亞欣（ChengYaHsin）
  * Try to write some comments for your codes (methods, 15 points)
  */
 public class HW2 {
@@ -21,7 +21,7 @@ public class HW2 {
 		if(isAllCardsCorrect(deck.getAllCards(),nDeck)){
 			System.out.println("Well done!");
 		}else{
-			System.out.println("Error, please check your sourse code");
+			System.out.println("Error, please check your source code");
 		}
 	}
 	/**
@@ -70,7 +70,20 @@ class Deck{
 	private ArrayList<Card> cards;
 	//TODO: Please implement the constructor (30 points)
 	public Deck(int nDeck){
-		cards=new ArrayList<Card>();
+		cards = new ArrayList<Card>(); // Create a new ArrayList
+		
+		//Use for loop to input data in the ArrayList<Card>
+		for (int a = 0 ; a < nDeck ; a++) //Determine how many decks that the player need
+		{
+			for (int i = 1 ; i < 5 ; i++) //Input the suit data
+			{
+				for (int j = 1; j < 14 ; j++) //Input the rank data
+				{
+					Card card = new Card(i,j); 
+					cards.add(card); //Build each card
+				}
+			}
+		}
 		//1 Deck have 52 cards, https://en.wikipedia.org/wiki/Poker
 		//Hint: Use new Card(x,y) and 3 for loops to add card into deck
 		//Sample code start
@@ -81,6 +94,14 @@ class Deck{
 	}	
 	//TODO: Please implement the method to print all cards on screen (10 points)
 	public void printDeck(){
+		
+		//Card allCards = new Card();
+		for ( int i = 0 ; i < cards.size() ; i++ )
+		{
+			cards.get(i).printCard(); //Print out every single card from the ArrayList<Card>
+		}
+		
+		
 		//Hint: print all items in ArrayList<Card> cards, 
 		//TODO: please implement and reuse printCard method in Card class (5 points)
 
@@ -90,7 +111,7 @@ class Deck{
 	}
 }
 /**
- * Description: TODO: please add description here
+ * Description: TODO: please add description here	
  */
 class Card{
 	private int suit; //Definition: 1~4, Clubs=1, Diamonds=2, Hearts=3, Spades=4
@@ -102,9 +123,115 @@ class Card{
 	public Card(int s,int r){
 		suit=s;
 		rank=r;
+		
 	}	
 	//TODO: 1. Please implement the printCard method (20 points, 10 for suit, 10 for rank)
 	public void printCard(){
+		
+		//Use if-else conditional expressions to sort the suits
+		if (suit == 1 )
+		{
+			//Use if-else conditional expressions to sort the rank numbers and names
+			if ( rank == 1 )
+			{
+				System.out.println("Clubs Ace");
+			}
+			else if ( rank == 11 )
+			{
+				System.out.println("Clubs Jake");
+			}
+			else if( rank == 12 )
+			{
+				System.out.println("Clubs Queen");
+			}
+			else if( rank == 13 )
+			{
+				System.out.println("Clubs King");
+			}
+			else
+			{
+				System.out.println("Clubs " + rank);
+			}
+		}
+		
+		//Use if-else conditional expressions to sort the suits
+		else if ( suit == 2 )
+		{
+			//Use if-else conditional expressions to sort the rank numbers and names
+			if ( rank == 1 )
+			{
+				System.out.println("Diamonds Ace");
+			}
+			else if ( rank == 11 )
+			{
+				System.out.println("Diamonds Jake");
+			}
+			else if( rank == 12 )
+			{
+				System.out.println("Diamonds Queen");
+			}
+			else if( rank == 13 )
+			{
+				System.out.println("Diamonds King");
+			}
+			else
+			{
+				System.out.println("Diamonds " + rank);
+			}
+		}
+		
+		//Use if-else conditional expressions to sort the suits
+		else if ( suit == 3 )
+		{
+			//Use if-else conditional expressions to sort the rank numbers and names
+			if ( rank == 1 )
+			{
+				System.out.println("Hearts Ace");
+			}
+			else if ( rank == 11 )
+			{
+				System.out.println("Hearts Jake");
+			}
+			else if( rank == 12 )
+			{
+				System.out.println("Hearts Queen");
+			}
+			else if( rank == 13 )
+			{
+				System.out.println("Hearts King");
+			}
+			else
+			{
+				System.out.println("Hearts " + rank);
+			}
+		}
+		
+		//Use if-else conditional expressions to sort the suits
+		else if ( suit == 4 )
+		{
+			//Use if-else conditional expressions to sort the rank numbers and names
+			if ( rank == 1 )
+			{
+				System.out.println("Spades Ace");
+			}
+			else if ( rank == 11 )
+			{
+				System.out.println("Spades Jake");
+			}
+			else if( rank == 12 )
+			{
+				System.out.println("Spades Queen");
+			}
+			else if( rank == 13 )
+			{
+				System.out.println("Spades King");
+			}
+			else
+			{
+				System.out.println("Spades " + rank);
+			}
+		}
+		
 		//Hint: print (System.out.println) card as suit,rank, for example: print 1,1 as Clubs Ace
 
 	}
